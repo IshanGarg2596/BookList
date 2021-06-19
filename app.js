@@ -152,3 +152,26 @@ document.querySelector('#book-list').addEventListener('click', (e) =>{
     UI.showAlert('Book Removed', 'success');
 
 });
+
+
+//Event: Search Keyup
+document.querySelector('#search-input').addEventListener( 'keyup' , (e) =>{
+    // Get search value
+    let searchValue = e.target.value.toLowerCase();
+
+    let list = document.querySelector('#book-list');
+
+    let tr = list.querySelectorAll('tr');
+
+    tr.forEach((row, index) =>{
+        let bookName = row.firstElementChild.innerHTML;
+        
+        if(bookName.toLowerCase().indexOf(searchValue) > -1){
+            row.style.display = '';
+        }
+        else{
+            row.style.display = 'none';
+        }
+    
+    });
+});
