@@ -1,2 +1,2 @@
 # BookList
-BookList App made with Javascript.
+BookList App made with vanilla Javascript.
